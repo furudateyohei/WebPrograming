@@ -31,8 +31,9 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -40,8 +41,9 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String loginId = request.getParameter("loginID");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String loginId = request.getParameter("loginId");
 		String password = request.getParameter("password");
 
 		UserDao userDao = new UserDao();
@@ -56,7 +58,7 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		HttpSession session = request.getSession();
-		session.setAttribute("userinf", user);
+		session.setAttribute("userinfo", user);
 
 		response.sendRedirect("UserListServlet");
 	}

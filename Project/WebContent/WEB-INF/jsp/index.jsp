@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!doctype html>
 <html>
@@ -12,6 +13,11 @@
     <title>ログイン画面</title>
   </head>
   <body><div class="container">
+  <c:if test="${errMsg != null}" >
+	    <div class="alert alert-danger" role="alert">
+		  ${errMsg}
+		</div>
+	</c:if>
   	<div class = "loginTop">
 <h1 class="text-center">ログイン画面</h1></div>
 <br>
@@ -22,7 +28,7 @@
   <div class="form-group row">
     <label for="inputLogin_ID" class="col-sm-4 col-form-label font-weight-bold">ログインID</label>
     <div class="col-sm-8">
-      <input type="text" name = "loginID" class="form-control" id="staticEmail" placeholder="ログインID">
+      <input type="text" name = "loginId" class="form-control" id="staticEmail" placeholder="ログインID">
     </div>
   </div>
   <div class="form-group row">

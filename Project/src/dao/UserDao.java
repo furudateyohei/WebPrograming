@@ -16,7 +16,8 @@ public class UserDao {
 	public User findByLoginInfo(String loginId, String password) {
 		Connection conn = null;
 
-		try {conn = DBManager.getConnection();
+		try {
+			conn = DBManager.getConnection();
 
 			String sql = "SELECT * FROM user WHERE login_id = ? and password = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);

@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
  <head>
@@ -11,9 +12,9 @@
 </head>
 <body>
 <div class="alert alert-primary" role="alert">
-  <p class="text-right">ユーザー名<span style="margin-right: 1em;"></span>さん
+  <p class="text-right">${userinfo.name}さん
   <span style="margin-right: 8em;"></span>
-  <a href="index.html" class="alert-link text-danger">ログアウト</a></p>
+  <a href="LogoutServlet" class="alert-link text-danger">ログアウト</a></p>
 </div><br>
 <br>
 <h1 class="text-center">ユーザー覧</h1><br>
@@ -22,18 +23,18 @@
 <div class="container">
 <div class="searchForm">
 <p class="text-right">
-<a href="userInput.html" class="alert-link text-info">新規登録</a></p>
+<a href="userEntry.jsp" class="alert-link text-info">新規登録</a></p>
 <form>
   <div class="form-group row">
     <label for="inputLogin_ID" class="col-sm-4 col-form-label font-weight-bold">ログインID</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="staticEmail" placeholder="ログインID">
+      <input type="text" class="form-control" id="inputLogin_ID" placeholder="ログインID">
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-4 col-form-label font-weight-bold">ユーザ名</label>
+    <label for="inputname" class="col-sm-4 col-form-label font-weight-bold">ユーザ名</label>
     <div class="col-sm-8">
-      <input type="password" class="form-control" id="inputPassword" placeholder="ユーザ名">
+      <input type="password" class="form-control" name = "name" id="inputname" placeholder="ユーザ名">
     </div>
   </div>
   <div class="form-group row">
