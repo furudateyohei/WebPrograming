@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
  <head>
@@ -23,7 +24,7 @@
 <div class="container">
 <div class="searchForm">
 <p class="text-right">
-<a href="userEntry.jsp" class="alert-link text-info">新規登録</a></p>
+<a href="UserEntryServlet" class="alert-link text-info">新規登録</a></p>
 <form>
   <div class="form-group row">
     <label for="inputLogin_ID" class="col-sm-4 col-form-label font-weight-bold">ログインID</label>
@@ -55,7 +56,7 @@
 </div>
 <br>
 <br>
-<p class="text-right"><button type="submit" class="btn btn-outline-primary">検索</button></p>
+<p class="text-right"><button type="submit" value ="検索" class="btn btn-outline-primary form-submit">検索</button></p>
 
 
 <table class="table table-striped">
@@ -67,31 +68,19 @@
     </tr>
   </thead>
   <tbody>
+   <c:forEach var="user" items="${userList}" >
     <tr>
-      <td scope="row">00001</td>
-      <td>Mark</td>
-      <td>○○年○月○日</td>
+      <td>${user.loginId }</td>
+      <td>${user.name }</td>
+      <td>${user.birthDate }</td>
       <td>
-      <a class="btn btn-primary" href="priUser.html" role="button">詳細</a>
-      <a class="btn btn-success" href="userUpdate.html" role="button">更新</a>
-      <a class="btn btn-danger" href="userDelete.html" role="button">削除</a>
+      <a class="btn btn-primary" href="UserDetailServlet?id=${user.id }" role="button">詳細</a>
+      <a class="btn btn-success" href="UserDetailServlet?id=${user.id }" role="button">更新</a>
+      <a class="btn btn-danger" href="UserDetailServlet?id=${user.id }" role="button">削除</a>
+    </td>
     </tr>
-    <tr>
-      <td scope="row">00002</td>
-      <td>Jacob</td>
-      <td>○○年○月○日</td>
-      <td><button type="button" class="btn btn-primary">詳細</button>
-      <button type="button" class="btn btn-success">更新</button>
-      <button type="button" class="btn btn-warning">削除</button></td>
-    </tr>
-    <tr>
-      <td scope="row">00003</td>
-      <td>Larry</td>
-      <td>○○年○月○日</td>
-      <td><button type="button" class="btn btn-primary">詳細</button>
-      <button type="button" class="btn btn-success">更新</button>
-      <button type="button" class="btn btn-warning">削除</button></td>
-    </tr>
+   </c:forEach>
+
   </tbody>
 </table>
 
