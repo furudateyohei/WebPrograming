@@ -74,9 +74,9 @@
       <td>${user.name }</td>
       <td>${user.birthDate }</td>
       <td>
-      <a class="btn btn-primary" href="UserDetailServlet?id=${user.id }" role="button">詳細</a>
-      <a class="btn btn-success" href="UserDetailServlet?id=${user.id }" role="button">更新</a>
-      <a class="btn btn-danger" href="UserDetailServlet?id=${user.id }" role="button">削除</a>
+      <a class="btn btn-primary" href="UserInformationServlet?id=${user.id }" role="button">詳細</a>
+      <a class="btn btn-success" href="UserDeleteServlet?id=${user.id }" role="button">更新</a>
+      <a class="btn btn-danger" href="UserDeleteServlet?id=${user.id }" role="button">削除</a>
     </td>
     </tr>
    </c:forEach>

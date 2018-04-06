@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
  <head>
@@ -11,12 +13,13 @@
 </head>
 <body>
 <div class="alert alert-primary" role="alert">
-  <p class="text-right">ユーザー名<span style="margin-right: 1em;"></span>さん<span style="margin-right: 8em;"></span><a href="#" class="alert-link text-danger">ログアウト</a></p>
+  <p class="text-right">${userinfo.name}さん
+  <span style="margin-right: 8em;"></span><a href="LogoutServlet" class="alert-link text-danger">ログアウト</a></p>
 </div><br>
 <br>
 <h1 class="text-center">ユーザ情報詳細参照</h1><br>
 <div class="loginForm">
-<form>
+<form action="UserInformationServlet" method="post">
   <div class="form-group row">
     <label for="inputLogin_ID" class="col-sm-4 col-form-label font-weight-bold">ログインID</label>
     <div class="col-sm-8">
