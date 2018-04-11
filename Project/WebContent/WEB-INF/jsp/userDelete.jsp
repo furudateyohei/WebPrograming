@@ -21,7 +21,7 @@
 <h1 class="text-center">ユーザ削除確認</h1><br>
   <p class = "text-center">${userinfo.loginId}を削除してよろしいですか？</p>
   <div class="loginForm">
-  <form action="UserDleteServlet" method="post">
+  <form action="UserDeleteServlet" method="post">
   <div class="form-group row">
   <br>
   <br>

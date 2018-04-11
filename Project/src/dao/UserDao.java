@@ -57,7 +57,7 @@ public class UserDao {
 
 			String sql = "SELECT * FROM user WHERE login_id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-            pStmt.setString(1, loginId);;
+            pStmt.setString(1, loginId);
             ResultSet rs = pStmt.executeQuery();
 
             if(!rs.next()) {
@@ -83,7 +83,89 @@ public class UserDao {
 			}
 		}
 	}
+	public User findByUserInfo(String id) {
+		Connection conn = null;
 
+		try {
+			conn = DBManager.getConnection();
+
+			String sql = "SELECT * FROM user WHERE id = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+            pStmt.setString(1, id);
+            ResultSet rs = pStmt.executeQuery();
+
+            if(!rs.next()) {
+            	return null;
+            }
+
+            int id2 = rs.getInt ("id");
+			String login_Id = rs.getString("login_id");
+			String name = rs.getString("name");
+			Date birthDate = rs.getDate("birth_date");
+			String password = rs.getString("password");
+			String createDate = rs.getString("create_date");
+			String updateDate = rs.getString("update_date");
+
+			User user = new User(id2, login_Id, name, birthDate, password, createDate, updateDate);
+			return user;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return null;
+
+		}finally {
+			if(conn != null);{
+				try {
+					conn.close();
+				}catch (SQLException e) {
+					e.printStackTrace();
+					return null;
+				}
+			}
+		}
+	}
+
+	public User findByUserUpdate(String id) {
+		Connection conn = null;
+
+		try {
+			conn = DBManager.getConnection();
+
+			String sql = "SELECT * FROM user WHERE id = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+            pStmt.setString(1, id);
+            ResultSet rs = pStmt.executeQuery();
+
+            if(!rs.next()) {
+            	return null;
+            }
+
+            int id2 = rs.getInt ("id");
+			String login_Id = rs.getString("login_id");
+			String name = rs.getString("name");
+			Date birthDate = rs.getDate("birth_date");
+			String password = rs.getString("password");
+			String createDate = rs.getString("create_date");
+			String updateDate = rs.getString("update_date");
+
+			User user = new User(id2, login_Id, name, birthDate, password, createDate, updateDate);
+			return user;
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return null;
+
+		}finally {
+			if(conn != null);{
+				try {
+					conn.close();
+				}catch (SQLException e) {
+					e.printStackTrace();
+					return null;
+				}
+			}
+		}
+	}
 
 	public List<User> findAll(){
 		Connection conn = null;
@@ -153,5 +235,31 @@ public class UserDao {
 			}
 		}
 	}
+	public void UserUpdate(String password, String name, String birthDate) {
+		Connection conn = null;
 
+		try {
+			conn = DBManager.getConnection();
+
+			String sql = "UPDATE user SET password = ? , name = ?, birth_date = ?, create_date = now(), update_date = now()  WHERE id = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+            pStmt.setString(1, password);
+            pStmt.setString(2, name);
+            pStmt.setString(3, birthDate);
+            pStmt.executeUpdate();
+
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+
+		}finally {
+			if(conn != null);{
+				try {
+					conn.close();
+				}catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
 }

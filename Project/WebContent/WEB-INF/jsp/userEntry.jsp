@@ -58,9 +58,9 @@
       <input type="date" name="birthDate" max="9999-12-31" class = "form-control">
     </div>
   </div>
-  <p class="text-center"><button type="submit" class="btn btn-outline-primary">登録</button></p>
+  <p class="text-center"><button type="submit"  class="btn btn-outline-primary">登録</button></p>
   <br>
-  <p class = "text-left"><a href="UserIndex.html" class="alert-link text-primary">戻る</a></p>
+  <p class = "text-left"><a href="UserListServlet" class="alert-link text-primary">戻る</a></p>
 </form>
 </div>
 </body>

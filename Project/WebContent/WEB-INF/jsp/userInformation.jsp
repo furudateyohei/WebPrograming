@@ -23,41 +23,35 @@
   <div class="form-group row">
     <label for="inputLogin_ID" class="col-sm-4 col-form-label font-weight-bold">ログインID</label>
     <div class="col-sm-8">
-    	<input type="text" readonly class="form-control-plaintext"  value="00001">
+    	<input type="text" readonly class="form-control-plaintext" value = ${user.loginId }>
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-4 col-form-label font-weight-bold">パスワード</label>
+    <label for="inputname" class="col-sm-4 col-form-label font-weight-bold">ユーザ名</label>
     <div class="col-sm-8">
-      <input type="text" readonly class="form-control-plaintext"  value="Mark">
+      <input type="text" readonly class="form-control-plaintext"  value = ${user.name }>
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-4 col-form-label font-weight-bold">パスワード</label>
+    <label for="inputbirthDate" class="col-sm-4 col-form-label font-weight-bold">生年月日</label>
     <div class="col-sm-8">
-      <input type="text" readonly class="form-control-plaintext"  value="Mark">
+      <input type="date" readonly class="form-control-plaintext" value = ${user.birthDate }>
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-4 col-form-label font-weight-bold">生年月日</label>
+    <label for="inputcreateDate" class="col-sm-4 col-form-label font-weight-bold">登録日時</label>
     <div class="col-sm-8">
-      <input type="text" readonly class="form-control-plaintext"  value="○○年○月○日">
+      <input type="date" readonly class="form-control-plaintext" value = ${user.createDate }>
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-4 col-form-label font-weight-bold">登録日時</label>
+    <label for="inputupdateDate" class="col-sm-4 col-form-label font-weight-bold">更新日時</label>
     <div class="col-sm-8">
-      <input type="text" readonly class="form-control-plaintext"  value="？？？？？？？">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-4 col-form-label font-weight-bold">更新日時</label>
-    <div class="col-sm-8">
-      <input type="text" readonly class="form-control-plaintext"  value="？？？？？？？">
+      <input type="date" readonly class="form-control-plaintext" value = ${user.updateDate }>
     </div>
   </div>
   <br>
-   <p class = "text-left"><a href="UserIndex.html" class="alert-link text-primary">戻る</a></p>
+   <p class = "text-left"><a href="UserListServlet" class="alert-link text-primary">戻る</a></p>
   </form>
   </div>
 </body>

@@ -35,7 +35,7 @@
   <div class="form-group row">
     <label for="inputname" class="col-sm-4 col-form-label font-weight-bold">ユーザ名</label>
     <div class="col-sm-8">
-      <input type="password" class="form-control" name = "name" id="inputname" placeholder="ユーザ名">
+      <input type="text" class="form-control" name = "name" id="inputname" placeholder="ユーザ名">
     </div>
   </div>
   <div class="form-group row">
@@ -75,7 +75,7 @@
       <td>${user.birthDate }</td>
       <td>
       <a class="btn btn-primary" href="UserInformationServlet?id=${user.id }" role="button">詳細</a>
-      <a class="btn btn-success" href="UserDeleteServlet?id=${user.id }" role="button">更新</a>
+      <a class="btn btn-success" href="UserUpdateServlet?id=${user.id }" role="button">更新</a>
       <a class="btn btn-danger" href="UserDeleteServlet?id=${user.id }" role="button">削除</a>
     </td>
     </tr>
