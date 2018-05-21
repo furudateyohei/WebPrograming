@@ -48,12 +48,20 @@ public class UserEntryServlet extends HttpServlet {
 
 		 if(loginId.equals("") || password.equals("") || name.equals("") || birthDate.equals("")) {
 			 request.setAttribute("errMsg", "入力された内容は正しくありません");
+
+			 User user = new User(loginId, name, birthDate);
+			 	request.setAttribute("user", user);
+
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userEntry.jsp");
 				dispatcher.forward(request, response);
 
 				return;
 		 }else if (!password.equals(password2)) {
 			 request.setAttribute("errMsg", "入力された内容は正しくありません");
+
+			 User user = new User(loginId, name, birthDate);
+			 	request.setAttribute("user", user);
+
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userEntry.jsp");
 				dispatcher.forward(request, response);
 

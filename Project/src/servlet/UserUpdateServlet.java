@@ -50,15 +50,25 @@ public class UserUpdateServlet extends HttpServlet {
 		String password2 = request.getParameter("password2");
 		String name = request.getParameter("name");
 		String birthDate = request.getParameter("birthDate");
+		String id = request.getParameter("id");
+		String loginId = request.getParameter("loginId");
 
-		 if(password.equals("") || name.equals("") || birthDate.equals("")) {
+		 if(password.equals("") || password2.equals("") || name.equals("") || birthDate.equals("")) {
 			 request.setAttribute("errMsg", "入力された内容は正しくありません");
+
+			 	User user = new User(id, loginId, name, birthDate);
+			 	request.setAttribute("user", user);
+
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userUpdate.jsp");
 				dispatcher.forward(request, response);
 
 				return;
 		 }else if (!password.equals(password2)) {
 			 request.setAttribute("errMsg", "入力された内容は正しくありません");
+
+			 	User user = new User(id, loginId, name, birthDate);
+			 	request.setAttribute("user", user);
+
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userUpdate.jsp");
 				dispatcher.forward(request, response);
 
@@ -66,7 +76,7 @@ public class UserUpdateServlet extends HttpServlet {
 
 			}
 		 UserDao userDao = new UserDao();
-		    userDao.UserUpdate(password,name, birthDate);
+		    userDao.UserUpdate(password,name, birthDate,id);
 
 		    response.sendRedirect("UserListServlet");
 	}

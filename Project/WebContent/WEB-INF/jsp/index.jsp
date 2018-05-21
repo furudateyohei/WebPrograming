@@ -28,7 +28,7 @@
   <div class="form-group row">
     <label for="inputLogin_ID" class="col-sm-4 col-form-label font-weight-bold">ログインID</label>
     <div class="col-sm-8">
-      <input type="text" name = "loginId" class="form-control" id="staticEmail" placeholder="ログインID">
+      <input type="text" name = "loginId" class="form-control" id="inputloginId" placeholder="ログインID">
     </div>
   </div>
   <div class="form-group row">

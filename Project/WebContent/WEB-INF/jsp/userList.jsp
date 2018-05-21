@@ -70,13 +70,24 @@
   <tbody>
    <c:forEach var="user" items="${userList}" >
     <tr>
+
       <td>${user.loginId }</td>
       <td>${user.name }</td>
       <td>${user.birthDate }</td>
-      <td>
+
+	<td>
+	<c:if test = "${userinfo.loginId == 'admin'}" >
       <a class="btn btn-primary" href="UserInformationServlet?id=${user.id }" role="button">詳細</a>
       <a class="btn btn-success" href="UserUpdateServlet?id=${user.id }" role="button">更新</a>
       <a class="btn btn-danger" href="UserDeleteServlet?id=${user.id }" role="button">削除</a>
+      </c:if>
+
+       <c:if test= "${userinfo.loginId != 'admin'}">
+      <a class="btn btn-primary" href="UserInformationServlet?id=${user.id }" role="button">詳細</a>
+      <c:if test="${user.loginId == userinfo.loginId }">
+      <a class="btn btn-success" href="UserUpdateServlet?id=${user.id}" role="button">更新</a>
+      </c:if>
+      </c:if>
     </td>
     </tr>
    </c:forEach>

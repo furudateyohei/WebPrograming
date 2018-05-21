@@ -25,6 +25,8 @@
 <h1 class="text-center">ユーザ情報更新</h1><br>
 <div class="loginForm">
 <form action="UserUpdateServlet" method="post">
+<input type="hidden" name="id" value="${user.id}">
+<input type="hidden" name="loginId" value="${user.loginId}">
   <div class="form-group row">
     <label for="inputLogin_ID" class="col-sm-4 col-form-label font-weight-bold">ログインID</label>
     <div class="col-sm-8">
@@ -52,7 +54,7 @@
   	<div class="form-group row">
     <label for="birth_date" class="col-sm-4 col-form-label font-weight-bold">生年月日</label>
     <div class="col-sm-8">
-      <input type="date" name="birthDate" max="9999-12-31" class = "form-control"value = ${user.birthDate }>
+      <input type="date" name="birthDate" max="9999-12-31" class = "form-control"value = ${user.birthDateStr }>
     </div>
   </div>
   <p class="text-center"><button type="submit" class="btn btn-outline-primary">登録</button></p>

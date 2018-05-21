@@ -31,7 +31,7 @@
   <div class="form-group row">
     <label for="inputLogin_ID" class="col-sm-4 col-form-label font-weight-bold">ログインID</label>
     <div class="col-sm-8">
-      <input type="text" name = "loginId" class="form-control" id="staticEmail" placeholder="ログインID">
+      <input type="text" name = "loginId" class="form-control" id="staticEmail" placeholder="ログインID" value = ${user.loginId }>
     </div>
   </div>
   <div class="form-group row">
@@ -49,13 +49,13 @@
   	<div class="form-group row">
     <label for="inputname" class="col-sm-4 col-form-label font-weight-bold">ユーザ名</label>
     <div class="col-sm-8">
-      <input type="text" name = "name" class="form-control" id="staticEmail" placeholder="ユーザ名">
+      <input type="text" name = "name" class="form-control" id="inputname"  placeholder="ユーザ名" value = ${user.name }>
     </div>
   </div>
   	<div class="form-group row">
     <label for="inputbirth_date" class="col-sm-4 col-form-label font-weight-bold">生年月日</label>
     <div class="col-sm-8">
-      <input type="date" name="birthDate" max="9999-12-31" class = "form-control">
+      <input type="date" name="birthDate" max="9999-12-31" class = "form-control" value = ${user.birthDateStr }>
     </div>
   </div>
   <p class="text-center"><button type="submit"  class="btn btn-outline-primary">登録</button></p>

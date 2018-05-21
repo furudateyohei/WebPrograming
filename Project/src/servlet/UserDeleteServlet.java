@@ -27,15 +27,15 @@ public class UserDeleteServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		String id = request.getParameter("id");
 		UserDao userDao = new UserDao();
-		User user = userDao.findByUserDlete(id);
+		User user = userDao.findByUserInfo(id);
 
 		request.setAttribute("user", user);
-		
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userInformation.jsp");
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userDelete.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -43,8 +43,17 @@ public class UserDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
+
+		String id = request.getParameter("id");
+		System.out.println(id);
+
+		UserDao userDao = new UserDao();
+		userDao.UserDelete(id);
+
+		response.sendRedirect("UserListServlet");
+
+
 	}
 
 }
