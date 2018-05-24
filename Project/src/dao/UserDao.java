@@ -214,7 +214,7 @@ public class UserDao {
 		return userList;
 	}
 
-	public List<User> findSearchl(String loginId, String username ,Date birthday){
+	public List<User> findSearchl(String loginId, String username ,String birthday_start , String birthday_end){
 		Connection conn = null;
 		List<User> userList = new ArrayList <User>();
 
@@ -228,8 +228,11 @@ public class UserDao {
 			if(!username.equals("")) {
 				sql += " and LIKE %{name}% = '" + username + "'";
 			}
-			if(!loginId.equals("")) {
-				sql += " and login_id = '" + loginId + "'";
+			if(!birthday_start.equals("")) {
+				sql += " and birth_date >= '" + birthday_start +"'";
+			}
+			if(!birthday_end.equals("")) {
+				sql += " and birth_date <= '" + birthday_end +"'";
 			}
 
 			Statement stmt = conn.createStatement();

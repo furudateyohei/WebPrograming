@@ -25,39 +25,41 @@
 <div class="searchForm">
 <p class="text-right">
 <a href="UserEntryServlet" class="alert-link text-info">新規登録</a></p>
-<form>
+<form action="UserListServlet" method="post">
   <div class="form-group row">
     <label for="inputLogin_ID" class="col-sm-4 col-form-label font-weight-bold">ログインID</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="inputLogin_ID" placeholder="ログインID">
+      <input type="text" class="form-control" name="loginId" placeholder="ログインID">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputname" class="col-sm-4 col-form-label font-weight-bold">ユーザ名</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" name = "name" id="inputname" placeholder="ユーザ名">
+      <input type="text" class="form-control" name = "username" id="inputname" placeholder="ユーザ名">
     </div>
   </div>
   <div class="form-group row">
     <label for="birth_date" class="col-sm-4 col-form-label font-weight-bold">生年月日</label>
     <div class="col-sm-8 row">
        <div class="col-sm-5">
-         <input type="date" name="calendar" max="9999-12-31" class="form-control">
+         <input type="date" name="birthday_start" max="9999-12-31" class="form-control">
        </div>
        <div class="col-sm-2">
          ～
        </div>
        <div class="col-sm-5">
-         <input type="date" name="calendar" max="9999-12-31" class="form-control">
+         <input type="date" name="birthday_end" max="9999-12-31" class="form-control">
        </div>
       </div>
      </div>
+
+     <p class="text-right"><button type="submit" value ="検索" class="btn btn-outline-primary form-submit">検索</button></p>
 </form>
 </div>
 <br>
 <br>
-<p class="text-right"><button type="submit" value ="検索" class="btn btn-outline-primary form-submit">検索</button></p>
 
+</div>
 
 <table class="table table-striped">
   <thead>
@@ -94,9 +96,6 @@
 
   </tbody>
 </table>
-
-
-</div>
 
 </body>
 </html>
