@@ -63,9 +63,9 @@
 
 <table class="table table-striped">
   <thead>
-    <tr><th scope="col">ログインID</th>
-      <th scope="col">ユーザー名</th>
-      <th scope="col">生年月日</th>
+    <tr><th scope="col">　　　ログインID</th>
+      <th scope="col">　　　ユーザー名</th>
+      <th scope="col">　　　生年月日</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -73,9 +73,9 @@
    <c:forEach var="user" items="${userList}" >
     <tr>
 
-      <td>${user.loginId }</td>
-      <td>${user.name }</td>
-      <td>${user.birthDate }</td>
+      <td>　　　${user.loginId }</td>
+      <td>　　　${user.name }</td>
+      <td>　　　${user.birthDate }</td>
 
 	<td>
 	<c:if test = "${userinfo.loginId == 'admin'}" >
